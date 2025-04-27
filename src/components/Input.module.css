@@ -1,0 +1,14 @@
+.form input {
+  background: var(--gray-500);
+  border: none;
+  border-radius: 4px;
+  padding: 1rem;
+  height: 3rem;
+  width: 39rem;
+  color: var(--gray-100);
+}
+
+.form input:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 1px var(--purple-dark);
+}
