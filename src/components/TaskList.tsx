@@ -1,3 +1,4 @@
+import { Task } from './Task'
 import style from './TaskList.module.css'
 import { ClipboardText } from 'phosphor-react'
 
@@ -25,6 +26,7 @@ export function TaskList() {
               Crie tarefas e organize seus itens a fazer
             </p>
           </div>
+          <Task text='Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.'/>
         </div>
       </main>
     </div>
