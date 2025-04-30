@@ -1,25 +1,25 @@
-import { Button } from './components/Button'
 import { Header } from './components/Header'
 import { Input } from './components/Input'
 
 
 import './global.css'
-import style from './App.module.css'
 import { TaskList } from './components/TaskList'
+import { useState } from 'react'
 
 function App() {
+  const [tasks, setTasks] = useState<string[]>([])
+
+  function handleCreateTask(task: string) {
+    setTasks((state) => {
+      return [...state, task]
+    })
+  }
+
   return (
     <div>
       <Header />
-
-      <div className={style.inputContainer}>
-        <Input />
-        <Button 
-          label="Criar"
-        />
-      </div>
-
-      <TaskList />
+      <Input onCreateTask={handleCreateTask}/>
+      <TaskList tasks={tasks}/>
     </div>
   )
 }
