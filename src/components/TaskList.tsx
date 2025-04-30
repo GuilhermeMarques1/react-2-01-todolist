@@ -4,9 +4,10 @@ import { ClipboardText } from 'phosphor-react'
 
 interface TaskListProps {
   tasks: string[];
+  onDeleteTask: (task: string) => void;
 }
 
-export function TaskList({ tasks }: TaskListProps) {
+export function TaskList({ tasks, onDeleteTask }: TaskListProps) {
   return (
     <div className={style.tasklist}>
       <header className={style.header}>
@@ -34,7 +35,11 @@ export function TaskList({ tasks }: TaskListProps) {
             </div>
           ) : ( 
           tasks.map((task) => (
-            <Task key={task} text={task}/>
+            <Task 
+              key={task} 
+              text={task}
+              onDeleteTask={onDeleteTask}
+            />
           ))
         )}
        

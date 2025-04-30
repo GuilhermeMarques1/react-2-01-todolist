@@ -15,11 +15,24 @@ function App() {
     })
   }
 
+  function handleDeleteTask(taskToDelete: string) {
+    const tasksWithoutDeletedOne = tasks.filter(task => {
+      return task !== taskToDelete
+    })
+
+    setTasks(tasksWithoutDeletedOne)
+  }
+
   return (
     <div>
       <Header />
-      <Input onCreateTask={handleCreateTask}/>
-      <TaskList tasks={tasks}/>
+      <Input 
+        onCreateTask={handleCreateTask}
+      />
+      <TaskList 
+        tasks={tasks}
+        onDeleteTask={handleDeleteTask}
+      />
     </div>
   )
 }

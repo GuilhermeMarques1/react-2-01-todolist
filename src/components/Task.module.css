@@ -52,3 +52,13 @@
   transform: translate(-50%, -50%);
   font-size: 0.75rem;
 }
+
+.deleteIcon {
+  cursor: pointer;
+
+  transition: color 0.2s;
+}
+
+.task .deleteIcon:hover {
+  color: var(--danger);
+}

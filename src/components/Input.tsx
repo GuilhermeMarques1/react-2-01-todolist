@@ -12,8 +12,6 @@ export function Input({ onCreateTask }: InputProps) {
   function handleSubmit(event: FormEvent) {
     event.preventDefault()
 
-    console.log("Try this")
-
     onCreateTask(task)
 
     setTask('')

@@ -3,9 +3,10 @@ import style from './Task.module.css'
 
 interface TaskProps {
   text: string;
+  onDeleteTask: (task: string) => void;
 }
 
-export function Task({ text }: TaskProps) {
+export function Task({ text, onDeleteTask }: TaskProps) {
   return (
     <div className={style.task}>
       <div>
@@ -14,7 +15,11 @@ export function Task({ text }: TaskProps) {
           {text}
         </p>
       </div>
-      <Trash size={20}/>
+      <Trash 
+        size={20} 
+        onClick={() => onDeleteTask(text)} 
+        className={style.deleteIcon}
+      />
     </div>
   )
 }
